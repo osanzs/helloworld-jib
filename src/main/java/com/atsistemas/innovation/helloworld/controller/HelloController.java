@@ -19,13 +19,13 @@ import io.swagger.annotations.ApiResponse;
 @Api(value = "Hello World API")
 public class HelloController {
 
-	private static final String template = "Hello, %s!";
+	private static final String template = "Hello En Mi Local Funciona, %s!";
 	private final AtomicLong counter = new AtomicLong();
 
 	@ApiOperation(value = "View Hello Message", code = 200, response = Hello.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Successfully response") })
 	@RequestMapping(value = "/hello",method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-	public Hello greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public Hello greeting(@RequestParam(value = "name", defaultValue = "anonymous") String name) {
 		return new Hello(counter.incrementAndGet(), String.format(template, name));
 	}
 }

@@ -4,3 +4,5 @@
 .settings/**
 .vscode/**
 target/**
+logs/**
+.sts4-cache/
